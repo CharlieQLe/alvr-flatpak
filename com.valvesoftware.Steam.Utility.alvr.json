@@ -1,0 +1,48 @@
+{
+    "id": "com.valvesoftware.Steam.Utility.alvr",
+    "branch": "stable",
+    "sdk": "org.freedesktop.Sdk//22.08",
+    "runtime": "com.valvesoftware.Steam",
+    "runtime-version": "stable",
+    "build-extension": true,
+    "appstream-compose": false,
+    "separate-locales": false,
+    "build-options": {
+        "prefix": "/app/utils/alvr",
+        "prepend-path": "/app/utils/alvr/bin",
+        "append-pkg-config-path": "/app/utils/alvr/lib/pkgconfig",
+        "strip": true
+    },
+    "cleanup": [
+        "/include",
+        "/lib/*.a",
+        "/lib/*.la",
+        "/share/doc",
+        "/share/man"
+    ],
+    "modules": [
+        {
+            "name": "alvr",
+            "build-options": {
+                "env": {
+                    "PREFIX": "/app/utils/alvr"
+                }
+            },
+            "buildsystem": "simple",
+            "build-commands": [
+                "chmod +x ALVR-x86_64.AppImage",
+                "./ALVR-x86_64.AppImage --appimage-extract",
+                "rm ALVR-x86_64.AppImage",
+                "mv squashfs-root/usr/* $FLATPAK_DEST",
+                "rm -r squashfs-root"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://github.com/alvr-org/ALVR-nightly/releases/download/v20.0.0-dev11%2Bnightly.2023.04.25/ALVR-x86_64.AppImage",
+                    "sha256": "6b4150110c7496dc9b2849edf463df1066eeb60cd44d25a46bca62ee457e622e"
+                }
+            ]
+        }
+    ]
+}
