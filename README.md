@@ -33,6 +33,3 @@ To launch the ALVR Dashboard, run the following command:
 flatpak run --command=alvr_dashboard com.valvesoftware.Steam
 ```
 
-## Caveats
-
-Launching SteamVR from the dashboard will always launch a new instance of Steam. To avoid this, register the ALVR driver with Steam from the dashboard. However, the dashboard will not appear if SteamVR is launched from Steam. If any configuration needs to be made, launch the dashboard like the above. If the visibility of the Steam client does not matter, then simply launch SteamVR from the dashboard. Otherwise, launch SteamVR from inside of Steam after the driver is registered.

@@ -35,20 +35,20 @@
                 "rm ALVR-x86_64.AppImage",
                 "mkdir $FLATPAK_DEST/bin",
                 "install -D -m755 alvr_dashboard.sh $FLATPAK_DEST/bin/alvr_dashboard",
-                "mv squashfs-root/usr $FLATPAK_DEST/usr",
+                "mv squashfs-root/usr $FLATPAK_DEST/alvr",
                 "rm -r squashfs-root"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://github.com/alvr-org/ALVR-nightly/releases/download/v20.0.0-dev11%2Bnightly.2023.04.25/ALVR-x86_64.AppImage",
-                    "sha256": "6b4150110c7496dc9b2849edf463df1066eeb60cd44d25a46bca62ee457e622e"
+                    "url": "https://github.com/alvr-org/ALVR-nightly/releases/download/v20.0.0-dev11%2Bnightly.2023.04.27/ALVR-x86_64.AppImage",
+                    "sha256": "a813e5dd54855a863957f1e2ea6264d059d80e41db370f28b0a8d10ca4f5ec46"
                 },
                 {
                     "type": "script",
                     "dest-filename": "alvr_dashboard.sh",
                     "commands": [
-                        "/app/utils/alvr/usr/bin/alvr_dashboard"
+                        "/app/utils/alvr/alvr/bin/alvr_dashboard"
                     ]
                 }
             ]
