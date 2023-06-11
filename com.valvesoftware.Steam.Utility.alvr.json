@@ -37,12 +37,13 @@
             "build-options": {
                 "env": {
                     "CARGO_HOME": "/run/build/alvr/cargo",
-                    "CARGO_NET_OFFLINE": "true",
+                    "CARGO_NET_OFFLINE": "false",
                     "RUST_BACKTRACE": "1"
                 }
             },
             "build-commands": [
-                "cargo build --frozen --release -p alvr_server -p alvr_dashboard -p alvr_vulkan_layer -p alvr_vrcompositor_wrapper"
+                "cargo xtask prepare-deps --platform linux",
+                "cargo xtask build-streamer --release"
             ],
             "sources": [
                 {
