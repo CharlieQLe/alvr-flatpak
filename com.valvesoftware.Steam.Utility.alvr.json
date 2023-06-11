@@ -48,7 +48,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/alvr-org/ALVR.git",
-                    "commit": "d16b94c9a772a0c24a04035bada65162c9307c81"
+                    "tag": "v20.0.0"
                 },
                 "cargo-sources.json"
             ]
