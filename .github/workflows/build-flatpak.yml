@@ -15,3 +15,4 @@ jobs:
         bundle: com.valvesoftware.Steam.Utility.alvr.flatpak
         manifest-path: com.valvesoftware.Steam.Utility.alvr.json
         cache-key: flatpak-builder-${{ github.sha }}
+        build-bundle: false
